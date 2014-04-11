@@ -13,9 +13,11 @@ filetype plugin on    " Enable filetype-specific plugins
 compiler ruby         " Enable compiler support for ruby
 set ai                " auto indent
 set ofu=syntaxcomplete#Complete " Omnicomplete
-set pastetoggle=<F10> " Paste toggle is F10
 " Toggle the tlist tag window with F8
-nnoremap <silent> <F8> :TlistToggle<CR> 
 let Tlist_GainFocus_On_ToggleOpen=1 " Focus the tag list when it opens
 let g:user_emmet_leader_key='<C-e>'
 let g:slime_target = "tmux"
+set pastetoggle=<F10> " Paste toggle is F10
+nnoremap <silent> <F8> :TlistToggle<CR> 
+map <F9> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
