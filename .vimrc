@@ -12,6 +12,7 @@ filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
 compiler ruby         " Enable compiler support for ruby
 set ai                " auto indent
+set laststatus=2      " so airline always shows up
 set ofu=syntaxcomplete#Complete " Omnicomplete
 " Toggle the tlist tag window with F8
 let Tlist_GainFocus_On_ToggleOpen=1 " Focus the tag list when it opens
