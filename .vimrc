@@ -22,3 +22,4 @@ set pastetoggle=<F10> " Paste toggle is F10
 nnoremap <silent> <F8> :TlistToggle<CR> 
 map <F9> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+map <F3> :vertical wincmd f<CR>
