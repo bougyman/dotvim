@@ -3,5 +3,6 @@
 
 augroup filetypedetect
 au BufNewFile,BufRead *.wiki setf Wikipedia
+au BufNewFile,BufRead template setf sh
 augroup END
 
