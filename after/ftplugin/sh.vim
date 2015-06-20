@@ -1,3 +1,1 @@
-set noet
-set ts=8 sw=8 softtabstop=8
-set ai
+set ts=8 sw=8 softtabstop=8 ai noet
