@@ -1,1 +1,4 @@
-set ts=8 sw=8 softtabstop=8 ai noet
+set et
+set ts=4 sw=4 softtabstop=4
+set ai
+color ChocolateLiquor
