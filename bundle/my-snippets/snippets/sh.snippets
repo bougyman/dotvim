@@ -17,15 +17,14 @@ snippet bash_debug
 snippet bash_getopts
 	usage() {
 		cat <<-EOT
-		Usage: \$0 <options> ${4}
+		Usage: \$0 <options> ${1}
 			Options:
-				${5}
+				${2}
 		EOT
 	}
 
-	while getopts :${1} opt; do
+	while getopts :${0} opt; do
 		case $opt in
-		  ${2}) ${3};;
 			h) usage
 			   exit;;
 			*) echo "Invalid option '$opt'" >&2
@@ -34,4 +33,4 @@ snippet bash_getopts
 		esac
 	done
 	shift $((OPTIND-1))
-	$6
+	$3
