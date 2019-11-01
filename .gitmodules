@@ -73,3 +73,9 @@
 [submodule "bundle/plantuml-syntax"]
 	path = bundle/plantuml-syntax
 	url = https://github.com/aklt/plantuml-syntax
+[submodule "bundle/puppet"]
+	path = bundle/puppet
+	url = git://github.com/rodjek/vim-puppet.git
+[submodule "bundle/vim-terraform"]
+	path = bundle/vim-terraform
+	url = https://github.com/hashivim/vim-terraform.git
