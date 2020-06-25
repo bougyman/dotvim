@@ -1,17 +1,16 @@
 snippet bash_here 
 	# Set $here to the full path to this script
-
 	me=${BASH_SOURCE[0]}
 	[ -L "$me" ] && me=$(readlink -f "$me")
 	here=$(cd "$(dirname "$me")" && pwd)
-
+snippet bash_vim
+	# vim: set foldmethod=marker et ts=4 sts=4 sw=4 :
 snippet bash_err
 	# {{{ fail/bail on all errors
 	set -e
 	${0}
 	set +e
 	# }}} errors no longer fatal/halt
-
 snippet bash_debug
 	# {{{ Print bash debugging info
 	set -v
@@ -36,7 +35,7 @@ snippet bash_usage
 		Usage: \$0 <options> ${2}
 			Options:
 				${2}
-		EOT
+	EOT
 	} # }}}
 	${0}
 snippet bash_getopts
@@ -64,5 +63,3 @@ snippet bash_getopts
 	done # }}}
 	shift $((OPTIND-1))
 	${0}
-snippet bash_vim
-	# vim: set et ts=4 sts=4 sw=4 foldmethod=marker :
