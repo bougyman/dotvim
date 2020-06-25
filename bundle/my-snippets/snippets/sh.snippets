@@ -18,25 +18,49 @@ snippet bash_debug
 	${0}
 	set +v
 	# }}} Stop printing debug info
-
-snippet bash_getopts
+snippet bash_die
+	die() {
+	  local -i code
+		code=\$1
+		shift
+		echo "Error! => $*" >&2
+		echo >&2
+		usage >&2
+		# shellcheck disable=SC2086
+		exit $code
+	}
+snippet bash_usage
 	usage() {
 		cat <<-EOT
-		Usage: \$0 <options> ${1}
+		Usage: \$0 <options> ${2}
 			Options:
 				${2}
 		EOT
 	}
-
-	while getopts :${0} opt; do
+	${0}
+snippet bash_getopts
+	while getopts :${1} opt; do
 		case $opt in
-			h) usage
-			   exit;;
-			*) echo "Invalid option '$opt'" >&2
+		${2})
+			   ${3}
+			   ;;
+			h) 
+			   usage
+			   exit
+				 ;;
+			\?) 
+			   echo "Invalid option '${opt}'" >&2
 			   usage >&2
-			   exit 27;;
+			   exit 27
+				 ;;
+			:) 
+			   echo "Option ${OPTARG} requires an argument" >&2
+			   usage >&2
+				 exit 28
+				 ;;
 		esac
 	done
 	shift $((OPTIND-1))
-	$3
+	${0}
+
 
