@@ -19,7 +19,7 @@ snippet bash_debug
 	set +v
 	# }}} Stop printing debug info
 snippet bash_die
-	die() {
+	die() { # {{{
 	  local -i code
 		code=\$1
 		shift
@@ -28,18 +28,20 @@ snippet bash_die
 		usage >&2
 		# shellcheck disable=SC2086
 		exit $code
-	}
+	} # }}}
+	${0}
 snippet bash_usage
-	usage() {
+	usage() { # {{{
 		cat <<-EOT
 		Usage: \$0 <options> ${2}
 			Options:
 				${2}
 		EOT
-	}
+	} # }}}
 	${0}
 snippet bash_getopts
-	while getopts :${1} opt; do
+	while getopts :${1} opt # {{{
+	do 
 		case $opt in
 			${2})
 				${3}
@@ -59,8 +61,8 @@ snippet bash_getopts
 				exit 28
 				;;
 		esac
-	done
+	done # }}}
 	shift $((OPTIND-1))
 	${0}
-
-
+snippet bash_vim
+	# vim: set et ts=4 sts=4 sw=4 foldmethod=marker :
