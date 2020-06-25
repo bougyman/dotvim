@@ -41,23 +41,23 @@ snippet bash_usage
 snippet bash_getopts
 	while getopts :${1} opt; do
 		case $opt in
-		${2})
-			   ${3}
-			   ;;
+			${2})
+				${3}
+				;;
 			h) 
-			   usage
-			   exit
-				 ;;
+				usage
+				exit
+				;;
 			\?) 
-			   echo "Invalid option '${opt}'" >&2
-			   usage >&2
-			   exit 27
-				 ;;
+				echo "Invalid option '${opt}'" >&2
+				usage >&2
+				exit 27
+				;;
 			:) 
-			   echo "Option ${OPTARG} requires an argument" >&2
-			   usage >&2
-				 exit 28
-				 ;;
+				echo "Option ${OPTARG} requires an argument" >&2
+				usage >&2
+				exit 28
+				;;
 		esac
 	done
 	shift $((OPTIND-1))
