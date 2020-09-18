@@ -50,7 +50,7 @@ snippet bash_getopts
 				exit
 				;;
 			\?) 
-				echo "Invalid option '${opt}'" >&2
+				echo "Invalid option '${OPTARG}'" >&2
 				usage >&2
 				exit 27
 				;;
@@ -63,3 +63,14 @@ snippet bash_getopts
 	done # }}}
 	shift $((OPTIND-1))
 	${0}
+snippet containsElement
+	containsElement () { # {{{
+	  local e match
+	  match=$1
+	  shift
+	  for e
+	  do
+		  [[ "$e" == "$match" ]] && return 0
+	  done
+	  return 1
+	} # }}}
