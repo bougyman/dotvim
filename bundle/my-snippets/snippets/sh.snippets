@@ -32,29 +32,30 @@ snippet bash_die
 snippet bash_usage
 	usage() { # {{{
 		cat <<-EOT
-		Usage: \$0 <options> ${2}
+		Usage: \$0 <options> ${1}
 			Options:
 				${2}
+				-h            Show help / usage
 	EOT
 	} # }}}
 	${0}
 snippet bash_getopts
-	while getopts :${1} opt # {{{
-	do 
+	while getopts :h${1} opt # {{{
+	do
 		case $opt in
 			${2})
 				${3}
 				;;
-			h) 
+			h)
 				usage
 				exit
 				;;
-			\?) 
+			\?)
 				echo "Invalid option '${OPTARG}'" >&2
 				usage >&2
 				exit 27
 				;;
-			:) 
+			:)
 				echo "Option ${OPTARG} requires an argument" >&2
 				usage >&2
 				exit 28
