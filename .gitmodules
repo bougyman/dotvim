@@ -88,3 +88,15 @@
 [submodule "bundle/vim-helm"]
 	path = bundle/vim-helm
 	url = https://github.com/towolf/vim-helm
+[submodule "bundle/vim-go"]
+	path = bundle/vim-go
+	url = https://github.com/fatih/vim-go
+[submodule "bundle/tagbar"]
+	path = bundle/tagbar
+	url = https://github.com/preservim/tagbar
+[submodule "bundle/vim-easytags"]
+	path = bundle/vim-easytags
+	url = https://github.com/xolox/vim-easytags
+[submodule "bundle/vim-misc"]
+	path = bundle/vim-misc
+	url = https://github.com/xolox/vim-misc
