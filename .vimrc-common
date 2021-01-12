@@ -39,3 +39,26 @@ let g:syntastic_yaml_checkers = ['yamllint', 'jsyaml']
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 " colorscheme mango
 set hidden
+autocmd BufRead,BufNewFile *.md setlocal spell
+autocmd BufRead,BufNewFile *.adoc setlocal spell
+autocmd BufRead,BufNewFile README setlocal spell
+autocmd BufRead,BufNewFile Readme setlocal spell
+autocmd BufRead,BufNewFile README.* setlocal spell
+autocmd BufRead,BufNewFile Readme.* setlocal spell
+autocmd FileType gitcommit setlocal spell
+
+
+" If buffer modified, update any 'Last modified: ' in the first 20 lines.
+" 'Last modified: ' can have up to 10 characters before (they are retained).
+" Restores cursor and window position using save_cursor variable.
+function! LastModified()
+  if &modified
+    let save_cursor = getpos(".")
+    let n = min([20, line("$")])
+    keepjumps exe '1,' . n . 's#^\(.\{,10}lastModified: \).*#\1' .
+          \ strftime('%a %b %d, %Y  %I:%M%p') . '#e'
+    call histdel('search', -1)
+    call setpos('.', save_cursor)
+  endif
+endfun
+autocmd BufWritePre * call LastModified()
