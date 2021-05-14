@@ -1,7 +1,18 @@
 snippet bash_here 
+	if readlink -f . >/dev/null 2>&1
+	then
+		readlink=readlink
+	else
+		if greadlink -f . >/dev/null 2>&1
+		then
+			readlink=greadlink
+		else
+			echo "You must install greadlink to use this (brew install coreutils)" >&2
+		fi
+	fi
 	# Set $here to the full path to this script
 	me=${BASH_SOURCE[0]}
-	[ -L "$me" ] && me=$(readlink -f "$me")
+	[ -L "$me" ] && me=$($readlink -f "$me")
 	here=$(cd "$(dirname "$me")" && pwd)
 snippet bash_vim
 	# vim: set foldmethod=marker et ts=4 sts=4 sw=4 :
