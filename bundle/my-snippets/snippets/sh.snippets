@@ -15,7 +15,7 @@ snippet bash_here
 	[ -L "$me" ] && me=$($readlink -f "$me")
 	here=$(cd "$(dirname "$me")" && pwd)
 snippet bash_vim
-	# vim: set foldmethod=marker et ts=4 sts=4 sw=4 :
+	# vim: set foldmethod=marker et ts=4 sts=4 sw=4 ft=bash :
 snippet bash_err
 	# {{{ fail/bail on all errors
 	set -e

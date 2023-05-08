@@ -100,3 +100,12 @@
 [submodule "bundle/vim-misc"]
 	path = bundle/vim-misc
 	url = https://github.com/xolox/vim-misc
+[submodule "bundle/vim-lion"]
+	path = bundle/vim-lion
+	url = https://github.com/tommcdo/vim-lion
+[submodule "bundle/vim-ripgrep"]
+	path = bundle/vim-ripgrep
+	url = https://github.com/jremmen/vim-ripgrep
+[submodule "bundle/copilot"]
+	path = bundle/copilot
+	url = https://github.com/github/copilot.vim
