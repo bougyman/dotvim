@@ -36,6 +36,10 @@ let g:syntastic_enable_highlighting=1
 let g:syntastic_echo_current_error=1
 let g:syntastic_yaml_checkers = ['yamllint', 'jsyaml']
 
+" Whitespace
+let g:better_whitespace_enabled=1
+let g:strip_whitespace_on_save=1
+
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 colorscheme wellsokai
 set hidden
