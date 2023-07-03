@@ -1,4 +1,4 @@
-snippet bash_here 
+snippet bash_here
 	if readlink -f . >/dev/null 2>&1
 	then
 		readlink=readlink
@@ -11,9 +11,9 @@ snippet bash_here
 		fi
 	fi
 	# Set $here to the full path to this script
-	me=${BASH_SOURCE[0]}
-	[ -L "$me" ] && me=$($readlink -f "$me")
-	here=$(cd "$(dirname "$me")" && pwd)
+	me=\${BASH_SOURCE[0]}
+	[ -L "\$me" ] && me=\$(\$readlink -f "\$me")
+	here=\$(cd "\$(dirname "\$me")" && pwd)
 snippet bash_vim
 	# vim: set foldmethod=marker et ts=4 sts=4 sw=4 ft=bash :
 snippet bash_err
@@ -30,14 +30,14 @@ snippet bash_debug
 	# }}} Stop printing debug info
 snippet bash_die
 	die() { # {{{
-	  local -i code
+		local -i code
 		code=\$1
 		shift
-		echo "Error! => $*" >&2
+		echo "Error! => \$*" >&2
 		echo >&2
 		usage >&2
 		# shellcheck disable=SC2086
-		exit $code
+		exit \$code
 	} # }}}
 	${0}
 snippet bash_usage
@@ -53,7 +53,7 @@ snippet bash_usage
 snippet bash_getopts
 	while getopts :h${1} opt # {{{
 	do
-		case $opt in
+		case \$opt in
 			${2})
 				${3}
 				;;
@@ -62,18 +62,18 @@ snippet bash_getopts
 				exit
 				;;
 			\?)
-				echo "Invalid option '${OPTARG}'" >&2
+				echo "Invalid option '\${OPTARG}'" >&2
 				usage >&2
 				exit 27
 				;;
 			:)
-				echo "Option ${OPTARG} requires an argument" >&2
+				echo "Option \${OPTARG} requires an argument" >&2
 				usage >&2
 				exit 28
 				;;
 		esac
 	done # }}}
-	shift $((OPTIND-1))
+	shift \$((OPTIND-1))
 	${0}
 snippet containsElement
 	containsElement () { # {{{
@@ -82,7 +82,7 @@ snippet containsElement
 	  shift
 	  for e
 	  do
-		  [[ "$e" == "$match" ]] && return 0
+		  [[ "\$e" == "\$match" ]] && return 0
 	  done
 	  return 1
 	} # }}}
