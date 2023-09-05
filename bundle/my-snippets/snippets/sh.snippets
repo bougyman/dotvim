@@ -7,7 +7,7 @@ snippet bash_here
 		then
 			readlink=greadlink
 		else
-			echo "You must install greadlink to use this (brew install coreutils)" >&2
+			printf "You must install greadlink to use this (brew install coreutils)\\n" >&2
 		fi
 	fi
 	# Set $here to the full path to this script
@@ -33,8 +33,7 @@ snippet bash_die
 		local -i code
 		code=\$1
 		shift
-		echo "Error! => \$*" >&2
-		echo >&2
+		printf "Error! => %s\\n\\n" "\$*" >&2
 		usage >&2
 		# shellcheck disable=SC2086
 		exit \$code
@@ -62,12 +61,12 @@ snippet bash_getopts
 				exit
 				;;
 			\?)
-				echo "Invalid option '\${OPTARG}'" >&2
+				printf "Invalid option '%s'\\n" "\${OPTARG}" >&2
 				usage >&2
 				exit 27
 				;;
 			:)
-				echo "Option \${OPTARG} requires an argument" >&2
+				printf "Option '%s' requires an argument\\n" "\${OPTARG}" >&2
 				usage >&2
 				exit 28
 				;;

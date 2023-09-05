@@ -40,6 +40,8 @@ let g:syntastic_yaml_checkers = ['yamllint', 'jsyaml']
 let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
 
+let g:snipMate = { 'snippet_version' : 1 }
+
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 colorscheme wellsokai
 set hidden
