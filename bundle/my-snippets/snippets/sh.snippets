@@ -14,6 +14,7 @@ snippet bash_here
 	me=\${BASH_SOURCE[0]}
 	[ -L "\$me" ] && me=\$(\$readlink -f "\$me")
 	here=\$(cd "\$(dirname "\$me")" && pwd)
+	just_me=\$(basename "\$me")
 snippet bash_vim
 	# vim: set foldmethod=marker et ts=4 sts=4 sw=4 ft=bash :
 snippet bash_err
@@ -39,6 +40,10 @@ snippet bash_die
 		exit \$code
 	} # }}}
 	${0}
+snippet bash_log
+	log() { # {{{
+		printf "%s <%s> %s\\n" "\$(date '+%Y-%m-%d %H:%M:%S')" "\$just_me" "\$*"
+	} # }}}
 snippet bash_usage
 	usage() { # {{{
 		cat <<-EOT
