@@ -65,15 +65,15 @@ snippet bash_getopts
 				usage
 				exit
 				;;
-			\?)
-				printf "Invalid option '%s'\\n" "\${OPTARG}" >&2
-				usage >&2
-				exit 27
-				;;
 			:)
 				printf "Option '%s' requires an argument\\n" "\${OPTARG}" >&2
 				usage >&2
 				exit 28
+				;;
+			\?)
+				printf "Invalid option '%s'\\n" "\${OPTARG}" >&2
+				usage >&2
+				exit 27
 				;;
 		esac
 	done # }}}
