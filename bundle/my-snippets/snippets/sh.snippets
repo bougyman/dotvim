@@ -47,26 +47,26 @@ snippet bash_log
 		printf "%s <%s> %s\\n" "\$(date '+%Y-%m-%d %H:%M:%S')" "\$just_me" "\$*"
 	} # }}}
 
-	debug_log() { # {{{
+	debug() { # {{{
 		[ \$verbose -lt 2 ] && return 0
 		# shellcheck disable=SC2059
 		log_line=\$(printf "\$@")
 		log "[DEBUG] \$log_line" >&2
 	} # }}}
 
-	warn_log() { # {{{
+	warn() { # {{{
 		# shellcheck disable=SC2059
 		log_line=\$(printf "\$@")
 		log "[WARN] \$log_line" >&2
 	} # }}}
 
-	error_log() { # {{{
+	error() { # {{{
 		# shellcheck disable=SC2059
 		log_line=\$(printf "\$@")
 		log "[ERROR] \$log_line" >&2
 	} # }}}
 
-	info_log() { # {{{
+	info() { # {{{
 		[ \$verbose -lt 1 ] && return 0
 		# shellcheck disable=SC2059
 		log_line=\$(printf "\$@")
