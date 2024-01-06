@@ -1,5 +1,5 @@
 snippet bash_here
-	if readlink -f . >/dev/null 2>&1
+	if readlink -f . >/dev/null 2>&1 # {{{ makes readlink work on mac
 	then
 		readlink=readlink
 	else
@@ -9,7 +9,8 @@ snippet bash_here
 		else
 			printf "You must install greadlink to use this (brew install coreutils)\\n" >&2
 		fi
-	fi
+	fi # }}}
+
 	# Set $here to the full path to this script
 	me=\${BASH_SOURCE[0]}
 	[ -L "\$me" ] && me=\$(\$readlink -f "\$me")
@@ -41,13 +42,41 @@ snippet bash_die
 	} # }}}
 	${0}
 snippet bash_log
+	## Logging functions # {{{
 	log() { # {{{
 		printf "%s <%s> %s\\n" "\$(date '+%Y-%m-%d %H:%M:%S')" "\$just_me" "\$*"
 	} # }}}
+
+	debug_log() { # {{{
+		[ \$verbose -lt 2 ] && return 0
+		# shellcheck disable=SC2059
+		log_line=\$(printf "\$@")
+		log "[DEBUG] \$log_line" >&2
+	} # }}}
+
+	warn_log() { # {{{
+		# shellcheck disable=SC2059
+		log_line=\$(printf \"$@")
+		log "[WARN] \$log_line" >&2
+	} # }}}
+
+	error_log() { # {{{
+		# shellcheck disable=SC2059
+		log_line=\$(printf "\$@")
+		log "[ERROR] \$log_line" >&2
+	} # }}}
+
+	info_log() { # {{{
+		[ \$verbose -eq 0 ] && return 0
+		# shellcheck disable=SC2059
+		log_line=\$(printf "\$@")
+		log "[INFO] \$log_line" >&2
+	} # }}}
+	# }}}
 snippet bash_usage
 	usage() { # {{{
 		cat <<-EOT
-		Usage: \$0 <options> ${1}
+		Usage: \$just_me <options> ${1}
 			Options:
 				${2}
 				-h            Show help / usage
