@@ -56,7 +56,7 @@ snippet bash_log
 
 	warn_log() { # {{{
 		# shellcheck disable=SC2059
-		log_line=\$(printf \"$@")
+		log_line=\$(printf "\$@")
 		log "[WARN] \$log_line" >&2
 	} # }}}
 
@@ -67,7 +67,7 @@ snippet bash_log
 	} # }}}
 
 	info_log() { # {{{
-		[ \$verbose -eq 0 ] && return 0
+		[ \$verbose -lt 1 ] && return 0
 		# shellcheck disable=SC2059
 		log_line=\$(printf "\$@")
 		log "[INFO] \$log_line" >&2
