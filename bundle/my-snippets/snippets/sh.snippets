@@ -44,7 +44,7 @@ snippet bash_die
 snippet bash_log
 	## Logging functions # {{{
 	log() { # {{{
-		printf "%s <%s> %s\\n" "\$(date '+%Y-%m-%d %H:%M:%S')" "\$just_me" "\$*"
+		printf "%s <%s> %s\\n" "\$(date '+%Y-%m-%d %H:%M:%S')" "\${just_me:-\$0}" "\$*"
 	} # }}}
 
 	debug() { # {{{
