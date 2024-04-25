@@ -109,8 +109,8 @@
 [submodule "bundle/vim-abolish"]
 	path = bundle/vim-abolish
 	url = https://github.com/tpope/vim-abolish.git
-[submodule "/home/bougyman/.vim/bundle/bats.vim"]
-	path = /home/bougyman/.vim/bundle/bats.vim
+[submodule "bundle/bats.vim"]
+	path = bundle/bats.vim
 	url = https://github.com/aliou/bats.vim.git
 [submodule "bundle/vim-vinegar"]
 	path = bundle/vim-vinegar
