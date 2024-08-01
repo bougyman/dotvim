@@ -23,7 +23,7 @@
 	path = bundle/vim-snippets
 	url = https://github.com/honza/vim-snippets.git
 [submodule "bundle/vim-surround"]
-	path = bundle/vim-surround
+	path = pack/tpope/start/surround
 	url = git://github.com/tpope/vim-surround.git
 [submodule "bundle/vim-repeat"]
 	path = bundle/vim-repeat
@@ -109,6 +109,15 @@
 [submodule "bundle/bats.vim"]
 	path = bundle/bats.vim
 	url = https://github.com/aliou/bats.vim.git
-[submodule "bundle/vim-vinegar"]
-	path = bundle/vim-vinegar
+[submodule "pack/tpope/start/vim-vinegar"]
+	path = pack/tpope/start/vim-vinegar
 	url = https://github.com/tpope/vim-vinegar
+[submodule "pack/tpope/start/unimpaired"]
+	path = pack/tpope/start/unimpaired
+	url = https://tpope.io/vim/unimpaired.git
+[submodule "pack/tpope/start/vim-git"]
+	path = pack/tpope/start/vim-git
+	url = https://github.com/tpope/vim-git
+[submodule "bundle/vim-markdown"]
+	path = bundle/vim-markdown
+	url = https://github.com/preservim/vim-markdown
