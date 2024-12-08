@@ -121,3 +121,12 @@
 [submodule "bundle/vim-markdown"]
 	path = bundle/vim-markdown
 	url = https://github.com/preservim/vim-markdown
+[submodule "pack/elixir/start/vim-elixir"]
+	path = pack/elixir/start/vim-elixir
+	url = https://github.com/elixir-editors/vim-elixir.git
+[submodule "pack/tpope/start/dadbod"]
+	path = pack/tpope/start/dadbod
+	url = https://tpope.io/vim/dadbod.git
+[submodule "pack/bougyman/nushell-syntax-vim"]
+	path = pack/bougyman/nushell-syntax-vim
+	url = https://github.com/bougyman/nushell-syntax-vim
