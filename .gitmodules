@@ -130,3 +130,6 @@
 [submodule "pack/bougyman/nushell-syntax-vim"]
 	path = pack/bougyman/nushell-syntax-vim
 	url = https://github.com/bougyman/nushell-syntax-vim
+[submodule "pack/bougyman/start/nushell-syntax-vim"]
+	path = pack/bougyman/start/nushell-syntax-vim
+	url = https://github.com/bougyman/nushell-syntax-vim
