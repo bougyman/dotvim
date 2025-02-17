@@ -124,3 +124,15 @@
 [submodule "pack/dense-analytics/start/ale"]
 	path = pack/dense-analytics/start/ale
 	url = https://github.com/dense-analysis/ale.git
+[submodule "pack/elixir/start/vim-elixir"]
+	path = pack/elixir/start/vim-elixir
+	url = https://github.com/elixir-editors/vim-elixir.git
+[submodule "pack/tpope/start/dadbod"]
+	path = pack/tpope/start/dadbod
+	url = https://tpope.io/vim/dadbod.git
+[submodule "pack/bougyman/nushell-syntax-vim"]
+	path = pack/bougyman/nushell-syntax-vim
+	url = https://github.com/bougyman/nushell-syntax-vim
+[submodule "pack/bougyman/start/nushell-syntax-vim"]
+	path = pack/bougyman/start/nushell-syntax-vim
+	url = https://github.com/bougyman/nushell-syntax-vim
