@@ -121,3 +121,6 @@
 [submodule "bundle/vim-markdown"]
 	path = bundle/vim-markdown
 	url = https://github.com/preservim/vim-markdown
+[submodule "pack/dense-analytics/start/ale"]
+	path = pack/dense-analytics/start/ale
+	url = https://github.com/dense-analysis/ale.git
